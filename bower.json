@@ -1,9 +1,9 @@
 {
-  "name": "date-picker",
+  "name": "monthly-date-picker",
   "authors": [
     "Michael Petrosyan <mikpetr95@gmail.com>"
   ],
-  "description": "simple custom angular date picker",
+  "description": "Simple monthly date range picker for AngularJS",
   "main": "",
   "license": "MIT",
   "homepage": "",
