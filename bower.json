@@ -5,7 +5,7 @@
     "Michael Petrosyan <mikpetr95@gmail.com>"
   ],
   "description": "Simple monthly date range picker for AngularJS",
-  "main": "",
+  "main": "./dist/monthlyDatePicker.min.js",
   "license": "MIT",
   "homepage": "",
   "ignore": [
