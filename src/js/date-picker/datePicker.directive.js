@@ -1,4 +1,5 @@
 angular.module('monthlyDatePicker', ['templates']).directive('monthlyDatePicker', ['$document', function ($document) {
+    
     var format = 'MM-DD-YYYY';
 
     function now () {
@@ -76,12 +77,6 @@ angular.module('monthlyDatePicker', ['templates']).directive('monthlyDatePicker'
             // reading from view and parse to model
             ctrl.$parsers.push(parseRangeString);
 
-            scope.$watch('range.start + range.end', function () {
-                var newDate = moment(scope.range.start).format(format) + separator + moment(scope.range.end).format(format);
-                ctrl.$setViewValue(newDate);
-            });
-
-
             // calendar part
             scope.calendar = {
                 isPicking: false,
@@ -124,7 +119,13 @@ angular.module('monthlyDatePicker', ['templates']).directive('monthlyDatePicker'
                         scope.calendar.month = moment(scope.range.end).format('MM');
                     } else {
                         scope.calendar.isPicking = false;
+                        scope.calendar.setDate();
                     }
+                },
+                setDate: function () {
+                    scope.calendar.isPicking = false;
+                    var newDate = moment(scope.range.start).format(format) + separator + moment(scope.range.end).format(format);
+                    ctrl.$setViewValue(newDate);
                 }
             };
 
