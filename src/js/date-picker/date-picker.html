@@ -26,8 +26,8 @@
                   ng-class="{ current: calendar.isCurrentMonth(item.month), selected: calendar.isSelectedMonth(item.month), disabled: calendar.monthIsDisabled(item.month) }"
                   ng-click="calendar.selectDate(item.month)">{{item.name}}</span>
         </div>
-        <div class="set-date" ng-click="calendar.setDate()">
+        <button class="set-date" ng-click="calendar.setDate()" ng-disabled="calendar.isNotValidRange()">
             Set Date
-        </div>
+        </button>
     </div>
 </div>

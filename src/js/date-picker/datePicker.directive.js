@@ -122,7 +122,13 @@ angular.module('monthlyDatePicker', ['templates']).directive('monthlyDatePicker'
                         scope.calendar.setDate();
                     }
                 },
+                isNotValidRange: function () {
+                    return scope.range.end < scope.range.start;
+                },
                 setDate: function () {
+                    if (scope.calendar.isNotValidRange())
+                        return;
+
                     scope.calendar.isPicking = false;
                     var newDate = moment(scope.range.start).format(format) + separator + moment(scope.range.end).format(format);
                     ctrl.$setViewValue(newDate);
