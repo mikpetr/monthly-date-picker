@@ -130,7 +130,7 @@ angular.module('monthlyDatePicker', ['templates']).directive('monthlyDatePicker'
                         return;
 
                     scope.calendar.isPicking = false;
-                    var newDate = moment(scope.range.start).format(format) + separator + moment(scope.range.end).format(format);
+                    var newDate = moment(scope.range.start).format(format) + separator + moment(scope.range.end).endOf('month').format(format);
                     ctrl.$setViewValue(newDate);
                 }
             };
